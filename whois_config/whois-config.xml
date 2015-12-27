@@ -3,14 +3,14 @@
     <!-- EXAMPLES
         <tld name=".com">
             <whois-service address="internic.net">
-                <pattern priority="100" type="qouta-exceeded" mode="string">Quota exceeded</pattern>
+                <pattern priority="100" type="quota-exceeded" mode="string">Quota exceeded</pattern>
             </whois-service>
             <test expected-result="available">blabla123google.com</test>
             <test expected-result="unavailable">google.com</test>
         </tld>
         <tld name=".net">
             <whois-service address="internic.net">
-                <pattern priority="300" type="qouta-exceeded" mode="string">Quota exceeded</pattern>
+                <pattern priority="300" type="quota-exceeded" mode="string">Quota exceeded</pattern>
                 <pattern priority="200" type="unavailable" mode="string">Registered</pattern>
                 <pattern priority="100" type="available" mode="string">Domain is available</pattern>
             </whois-service>
@@ -113,7 +113,9 @@
         <test expected-result="available">blabla123google.cc</test>
     </tld>            
     <tld name=".cd">
-        <whois-service address="whois.nic.cd" />
+        <whois-service address="whois.nic.cd">
+            <pattern type="quota-exceeded" mode="string">lookup quota exceeded.</pattern>
+        </whois-service>
         <test expected-result="unavailable">google.cd</test>
         <test expected-result="available">blabla123google.cd</test>
     </tld>            
@@ -126,7 +128,7 @@
     </tld>            
     <tld name=".cl">
         <whois-service address="whois.nic.cl">
-            <pattern type="available" mode="string">: no existe</pattern>
+            <pattern type="available" mode="string">no existe</pattern>
         </whois-service>
         <test expected-result="unavailable">google.cl</test>
         <test expected-result="available">blabla123google.cl</test>
@@ -222,6 +224,7 @@
     <tld name=".hk">
         <whois-service address="whois.hkirc.hk">
             <pattern type="available" mode="string">the domain has not been registered.</pattern>
+            <pattern type="quota-exceeded" mode="string">please maintain at least 10-second time before starting another enquiry.</pattern>
         </whois-service>
         <test expected-result="unavailable">google.hk</test>
         <test expected-result="available">blabla123google.hk</test>
@@ -242,7 +245,7 @@
         <whois-service address="whois.isoc.org.il">
             <pattern type="available" mode="string">% no data was found to match the request criteria.</pattern>
         </whois-service>
-        <test expected-result="unavailable">google.il</test>
+        <test expected-result="unavailable">nic.co.il</test>
         <test expected-result="available">blabla123google.il</test>
     </tld>            
     <tld name=".im">
@@ -297,7 +300,7 @@
     </tld>            
     <tld name=".lu">
         <whois-service address="whois.dns.lu">
-            <pattern type="qouta-exceeded" mode="string">%% maximum query rate reached</pattern>
+            <pattern type="quota-exceeded" mode="string">%% maximum query rate reached</pattern>
         </whois-service>
         <test expected-result="unavailable">google.lu</test>
         <test expected-result="available">blabla123google.lu</test>
@@ -348,7 +351,7 @@
     </tld>            
     <tld name=".nl">
         <whois-service address="whois.domain-registry.nl">
-            <pattern type="qouta-exceeded" mode="string">maximum number of requests per second exceeded</pattern>
+            <pattern type="quota-exceeded" mode="string">maximum number of requests per second exceeded</pattern>
         </whois-service>
         <test expected-result="unavailable">google.nl</test>
         <test expected-result="available">blabla123google.nl</test>
@@ -485,8 +488,9 @@
     <tld name=".lv">
         <whois-service address="whois.nic.lv">
             <pattern type="available" mode="string">status: free</pattern>
+            <pattern type="unavailable" mode="string">status: active</pattern>
         </whois-service>        
-        <whois-service address="whois.fiducia.lv" />
+        <!-- LOCAL REGISTRY whois-service address="whois.fiducia.lv" /-->
         <test expected-result="unavailable">nic.lv</test>
         <test expected-result="available">blabla123google.lv</test>
     </tld>            
@@ -525,7 +529,8 @@
     </tld>            
     <tld name=".ma">
         <whois-service address="whois.iam.net.ma">
-            <pattern type="unavailable" mode="string">registry expiry date:</pattern>            
+            <pattern type="unavailable" mode="string">registry expiry date:</pattern>
+            <pattern type="available" mode="string">domain status: no object found</pattern>
         </whois-service>
         <test expected-result="unavailable">google.ma</test>
         <test expected-result="available">blabla123google.ma</test>        
@@ -562,9 +567,9 @@
     <!-- ccTLD [END] -->
 
     <!-- Common patterns (will work if no tld-specific pattern match) [BEGIN] -->
-    <pattern priority="300" type="qouta-exceeded" mode="string">the whois query quota for</pattern>
-    <pattern priority="300" type="qouta-exceeded" mode="string">too many requests</pattern>
-    <pattern priority="300" type="qouta-exceeded" mode="string">Quota exceeded</pattern>
+    <pattern priority="300" type="quota-exceeded" mode="string">the whois query quota for</pattern>
+    <pattern priority="300" type="quota-exceeded" mode="string">too many requests</pattern>
+    <pattern priority="300" type="quota-exceeded" mode="string">Quota exceeded</pattern>
 
     <pattern priority="200" type="unavailable" mode="string">registered until cancelled</pattern>
     <pattern priority="200" type="unavailable" mode="string">not available</pattern>
