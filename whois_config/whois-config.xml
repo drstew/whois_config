@@ -69,7 +69,9 @@
         <test expected-result="available">blabla123google.ag</test>
     </tld>
     <tld name=".am">
-        <whois-service address="whois.nic.am" />
+        <whois-service address="whois.nic.am">
+            <pattern type="available" mode="string">no match</pattern>
+        </whois-service>
         <test expected-result="unavailable">google.am</test>
         <test expected-result="available">blabla123google.am</test>
     </tld>
@@ -79,7 +81,9 @@
         <test expected-result="available">blabla123google.as</test>
     </tld>            
     <tld name=".at">
-        <whois-service address="whois.nic.at" />
+        <whois-service address="whois.nic.at">
+            <pattern type="available" mode="string">% nothing found</pattern>
+        </whois-service>
         <test expected-result="unavailable">google.at</test>
         <test expected-result="available">blabla123google.at</test>
     </tld>            
@@ -90,7 +94,7 @@
     </tld>            
     <tld name=".br">
         <whois-service address="whois.nic.br" />
-        <test expected-result="unavailable">google.br</test>
+        <test expected-result="unavailable">nic.br</test>
         <test expected-result="available">blabla123google.br</test>
     </tld>            
     <tld name=".bz">
@@ -114,19 +118,23 @@
         <test expected-result="available">blabla123google.cd</test>
     </tld>            
     <tld name=".ch">
-        <whois-service address="whois.nic.ch" />
+        <whois-service address="whois.nic.ch">
+            <pattern type="available" mode="string">we do not have an entry in our database matching your query.</pattern>
+        </whois-service>
         <test expected-result="unavailable">google.ch</test>
         <test expected-result="available">blabla123google.ch</test>
     </tld>            
     <tld name=".cl">
-        <whois-service address="whois.nic.cl" />
+        <whois-service address="whois.nic.cl">
+            <pattern type="available" mode="string">: no existe</pattern>
+        </whois-service>
         <test expected-result="unavailable">google.cl</test>
         <test expected-result="available">blabla123google.cl</test>
     </tld>            
     <tld name=".cn">
         <whois-service address="whois.cnnic.net.cn" />
-        <whois-service address="whois.paycenter.com.cn" />
-        <whois-service address="whois.dns.com.cn" />
+        <!-- NOT WORKS whois-service address="whois.paycenter.com.cn" /-->
+        <!-- LOCAL REGISTRATOR whois-service address="whois.dns.com.cn" /-->
         <test expected-result="unavailable">google.cn</test>
         <test expected-result="available">blabla123google.cn</test>
     </tld>            
@@ -146,12 +154,16 @@
         <test expected-result="available">blabla123google.co.uk</test>
     </tld>            
     <tld name=".com.au">
-        <whois-service address="whois.ausregistry.net.au" />
+        <whois-service address="whois.ausregistry.net.au">
+            <pattern type="available" mode="string">no data found</pattern>
+        </whois-service>
         <test expected-result="unavailable">google.com.au</test>
         <test expected-result="available">blabla123google.com.au</test>
     </tld>            
     <tld name=".cx">
-        <whois-service address="whois.nic.cx" />
+        <whois-service address="whois.nic.cx">
+            <pattern type="available" mode="string">domain status: no object found</pattern>
+        </whois-service>
         <test expected-result="unavailable">google.cx</test>
         <test expected-result="available">blabla123google.cx</test>
     </tld>            
@@ -161,9 +173,11 @@
         <test expected-result="available">blabla123google.cz</test>
     </tld>            
     <tld name=".de">
-        <whois-service address="whois.denic.de" />
-        <whois-service address="whois.antagus.de" />
-        <whois-service address="whois.your-server.de" />
+        <whois-service address="whois.denic.de">
+            <pattern type="available" mode="string">status: free</pattern>
+        </whois-service>
+        <!-- NOT WORKS whois-service address="whois.antagus.de" /-->
+        <!-- LOCAL REGISTRY whois-service address="whois.your-server.de" /-->
         <test expected-result="unavailable">google.de</test>
         <test expected-result="available">blabla123google.de</test>
     </tld>            
@@ -199,12 +213,16 @@
         <test expected-result="available">blabla123google.fr</test>
     </tld>            
     <tld name=".gs">
-        <whois-service address="whois.nic.gs" />
+        <whois-service address="whois.nic.gs">
+            <pattern type="available" mode="string">domain status: no object found</pattern>
+        </whois-service>
         <test expected-result="unavailable">google.gs</test>
         <test expected-result="available">blabla123google.gs</test>
     </tld>            
     <tld name=".hk">
-        <whois-service address="whois.hkirc.hk" />
+        <whois-service address="whois.hkirc.hk">
+            <pattern type="available" mode="string">the domain has not been registered.</pattern>
+        </whois-service>
         <test expected-result="unavailable">google.hk</test>
         <test expected-result="available">blabla123google.hk</test>
     </tld>            
@@ -214,12 +232,16 @@
         <test expected-result="available">blabla123google.hr</test>
     </tld>            
     <tld name=".ie">
-        <whois-service address="whois.domainregistry.ie" />
+        <whois-service address="whois.domainregistry.ie">
+            <pattern type="available" mode="string">is not a registered .ie domain name</pattern>
+        </whois-service>
         <test expected-result="unavailable">google.ie</test>
         <test expected-result="available">blabla123google.ie</test>
     </tld>            
     <tld name=".il">
-        <whois-service address="whois.isoc.org.il" />
+        <whois-service address="whois.isoc.org.il">
+            <pattern type="available" mode="string">% no data was found to match the request criteria.</pattern>
+        </whois-service>
         <test expected-result="unavailable">google.il</test>
         <test expected-result="available">blabla123google.il</test>
     </tld>            
@@ -249,7 +271,9 @@
         <test expected-result="available">blabla123google.it</test>
     </tld>            
     <tld name=".jp">
-        <whois-service address="whois.jprs.jp" />
+        <whois-service address="whois.jprs.jp">
+            <pattern type="available" mode="string">no match!!</pattern>
+        </whois-service>
         <test expected-result="unavailable">google.jp</test>
         <test expected-result="available">blabla123google.jp</test>
     </tld>            
@@ -265,12 +289,16 @@
         <test expected-result="available">blabla123google.la</test>
     </tld>            
     <tld name=".li">
-        <whois-service address="whois.nic.li" />
+        <whois-service address="whois.nic.li">
+            <pattern type="available" mode="string">we do not have an entry in our database matching your query.</pattern>
+        </whois-service>
         <test expected-result="unavailable">google.li</test>
         <test expected-result="available">blabla123google.li</test>
     </tld>            
     <tld name=".lu">
-        <whois-service address="whois.dns.lu" />
+        <whois-service address="whois.dns.lu">
+            <pattern type="qouta-exceeded" mode="string">%% maximum query rate reached</pattern>
+        </whois-service>
         <test expected-result="unavailable">google.lu</test>
         <test expected-result="available">blabla123google.lu</test>
     </tld>            
@@ -285,7 +313,9 @@
         <test expected-result="available">blabla123google.me</test>
     </tld>            
     <tld name=".tc">
-        <whois-service address="whois.adamsnames.tc" />
+        <whois-service address="whois.adamsnames.tc">
+            <pattern type="available" mode="string">domain status: no object found</pattern>
+        </whois-service>
         <test expected-result="unavailable">google.tc</test>
         <test expected-result="available">blabla123google.tc</test>
     </tld>            
@@ -305,7 +335,9 @@
         <test expected-result="available">blabla123google.vc</test>
     </tld>            
     <tld name=".ms">
-        <whois-service address="whois.nic.ms" />
+        <whois-service address="whois.nic.ms">
+            <pattern type="available" mode="string">domain status: no object found</pattern>
+        </whois-service>
         <test expected-result="unavailable">google.ms</test>
         <test expected-result="available">blabla123google.ms</test>
     </tld>            
@@ -315,12 +347,16 @@
         <test expected-result="available">blabla123google.my</test>
     </tld>            
     <tld name=".nl">
-        <whois-service address="whois.domain-registry.nl" />
+        <whois-service address="whois.domain-registry.nl">
+            <pattern type="qouta-exceeded" mode="string">maximum number of requests per second exceeded</pattern>
+        </whois-service>
         <test expected-result="unavailable">google.nl</test>
         <test expected-result="available">blabla123google.nl</test>
     </tld>            
     <tld name=".no">
-        <whois-service address="whois.norid.no" />
+        <whois-service address="whois.norid.no">
+            <pattern type="available" mode="string">% no match</pattern>
+        </whois-service>
         <test expected-result="unavailable">google.no</test>
         <test expected-result="available">blabla123google.no</test>
     </tld>            
@@ -371,7 +407,9 @@
         <test expected-result="available">blabla123google.si</test>
     </tld>            
     <tld name=".sk">
-        <whois-service address="whois.sk-nic.sk" />
+        <whois-service address="whois.sk-nic.sk">
+            <pattern type="unavailable" mode="string">domain-status       dom_ok</pattern>
+        </whois-service>
         <test expected-result="unavailable">google.sk</test>
         <test expected-result="available">blabla123google.sk</test>
     </tld>            
@@ -406,7 +444,9 @@
         <test expected-result="available">blabla123google.tv</test>
     </tld>            
     <tld name=".tw">
-        <whois-service address="whois.twnic.net.tw" />
+        <whois-service address="whois.twnic.net.tw">
+            <pattern type="available" mode="string">no found</pattern>
+        </whois-service>
         <test expected-result="unavailable">google.tw</test>
         <test expected-result="available">blabla123google.tw</test>
     </tld>            
@@ -431,7 +471,9 @@
         <test expected-result="available">blabla123google.ir</test>
     </tld>            
     <tld name=".hu">
-        <whois-service address="whois.nic.hu" />
+        <whois-service address="whois.nic.hu">
+            <pattern type="unavailable" mode="string">record created:</pattern>
+        </whois-service>
         <test expected-result="unavailable">google.hu</test>
         <test expected-result="available">blabla123google.hu</test>
     </tld>            
@@ -441,28 +483,38 @@
         <test expected-result="available">blabla123google.lt</test>
     </tld>            
     <tld name=".lv">
-        <whois-service address="whois.nic.lv" />
+        <whois-service address="whois.nic.lv">
+            <pattern type="available" mode="string">status: free</pattern>
+        </whois-service>        
         <whois-service address="whois.fiducia.lv" />
-        <test expected-result="unavailable">google.lv</test>
+        <test expected-result="unavailable">nic.lv</test>
         <test expected-result="available">blabla123google.lv</test>
     </tld>            
     <tld name=".com.mx">
-        <whois-service address="whois.nic.mx" />
+        <whois-service address="whois.nic.mx">
+            <pattern type="available" mode="string">object_not_found</pattern>
+        </whois-service>
         <test expected-result="unavailable">google.com.mx</test>
         <test expected-result="available">blabla123google.com.mx</test>
     </tld>            
     <tld name=".bg">
-        <whois-service address="whois.register.bg" />
+        <whois-service address="whois.register.bg">
+            <pattern type="available" mode="string">does not exist in database!</pattern>
+        </whois-service>
         <test expected-result="unavailable">google.bg</test>
         <test expected-result="available">blabla123google.bg</test>
     </tld>            
     <tld name=".by">
-        <whois-service address="whois.cctld.by" />
+        <whois-service address="whois.cctld.by">
+            <pattern type="available" mode="string">object does not exists</pattern>
+        </whois-service>
         <test expected-result="unavailable">google.by</test>
         <test expected-result="available">blabla123google.by</test>        
     </tld>            
     <tld name=".mu">
-        <whois-service address="whois.nic.mu" />
+        <whois-service address="whois.nic.mu">
+            <pattern type="available" mode="string">domain status: no object found</pattern>
+        </whois-service>
         <test expected-result="unavailable">google.mu</test>
         <test expected-result="available">blabla123google.mu</test>
     </tld>            
@@ -472,12 +524,16 @@
         <test expected-result="available">blabla123google.ee</test>        
     </tld>            
     <tld name=".ma">
-        <whois-service address="whois.iam.net.ma" />
+        <whois-service address="whois.iam.net.ma">
+            <pattern type="unavailable" mode="string">registry expiry date:</pattern>            
+        </whois-service>
         <test expected-result="unavailable">google.ma</test>
         <test expected-result="available">blabla123google.ma</test>        
     </tld>            
     <tld name=".ae">
-        <whois-service address="whois.aeda.net.ae" />
+        <whois-service address="whois.aeda.net.ae">
+            <pattern type="available" mode="string">no data found</pattern>
+        </whois-service>
         <test expected-result="unavailable">google.ae</test>
         <test expected-result="available">blabla123google.ae</test>
     </tld>            
@@ -497,7 +553,9 @@
         <test expected-result="available">blabla123google.co.uz</test>    
     </tld>            
     <tld name=".dz">
-        <whois-service address="whois.nic.dz" />
+        <whois-service address="whois.nic.dz">
+            <pattern type="available" mode="string">no object found!</pattern>
+        </whois-service>
         <test expected-result="unavailable">google.dz</test>
         <test expected-result="available">blabla123google.dz</test>        
     </tld>            
@@ -535,7 +593,8 @@
     <pattern priority="100" type="available" mode="string">no such domain</pattern>   
     <pattern priority="100" type="available" mode="string">no entries found</pattern>   
     <pattern priority="100" type="available" mode="string">available</pattern>   
-    <pattern priority="100" type="available" mode="string">no match for</pattern>   
+    <pattern priority="100" type="available" mode="string">no match for</pattern>
+    <pattern priority="100" type="available" mode="string">no match</pattern>
     
     <pattern priority="0" type="unavailable" mode="string">registrar</pattern>   
     <pattern priority="0" type="unavailable" mode="string">registar</pattern>   
