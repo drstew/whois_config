@@ -1,0 +1,639 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<whois-config>
+    <!-- EXAMPLES
+        <tld name=".com">
+            <whois-service address="internic.net">
+                <pattern priority="100" type="qouta-exceeded" mode="string">Quota exceeded</pattern>
+            </whois-service>
+            <test expected-result="available">blabla123google.com</test>
+            <test expected-result="unavailable">google.com</test>
+        </tld>
+        <tld name=".net">
+            <whois-service address="internic.net">
+                <pattern priority="300" type="qouta-exceeded" mode="string">Quota exceeded</pattern>
+                <pattern priority="200" type="unavailable" mode="string">Registered</pattern>
+                <pattern priority="100" type="available" mode="string">Domain is available</pattern>
+            </whois-service>
+            <test expected-result="available">blabla123google.net</test>
+            <test expected-result="available">blabla567google.net</test>
+            <test expected-result="unavailable">google.net</test>
+            <test expected-result="unavailable">internic.net.net</test>
+        </tld>
+    -->    
+
+    <!-- gTLD [BEGIN] -->
+    <tld name=".com">
+        <whois-service address="whois.internic.net" />
+        <whois-service address="whois.crsnic.net" />
+        <whois-service address="whois.verisign-grs.com" />
+        <test expected-result="unavailable">google.com</test>
+        <test expected-result="available">blabla123google.com</test>
+    </tld>
+    <tld name=".net">
+        <whois-service address="whois.internic.net" />
+        <whois-service address="whois.crsnic.net" />
+        <whois-service address="whois.verisign-grs.com" />
+        <test expected-result="unavailable">google.net</test>
+        <test expected-result="available">blabla123google.net</test>
+    </tld>
+    <tld name=".org">
+        <whois-service address="whois.pir.org" />
+        <whois-service address="whois.publicinterestregistry.net" />
+        <test expected-result="unavailable">google.org</test>
+        <test expected-result="available">blabla123google.org</test>
+    </tld>
+    <tld name=".biz">        
+        <whois-service address="whois.biz" />
+        <whois-service address="whois.nic.biz" />
+        <test expected-result="unavailable">google.biz</test>
+        <test expected-result="available">blabla123google.biz</test>
+    </tld>
+    <tld name=".info">
+        <whois-service address="whois.afilias.info" />
+        <whois-service address="whois.afilias.net" />
+        <test expected-result="unavailable">google.info</test>
+        <test expected-result="available">blabla123google.info</test>
+    </tld>
+    <!-- gTLD [END] -->
+
+    <!-- ccTLD [BEGIN] -->
+    <tld name=".ac">
+        <whois-service address="whois.nic.ac" />
+        <test expected-result="unavailable">google.ac</test>
+        <test expected-result="available">blabla123google.ac</test>
+    </tld>
+    <tld name=".ag">
+        <whois-service address="whois.nic.ag" />
+        <whois-service address="whois.afilias-grs.info" />        
+        <test expected-result="unavailable">google.ag</test>
+        <test expected-result="available">blabla123google.ag</test>
+    </tld>
+    <tld name=".am">
+        <whois-service address="whois.nic.am" />
+        <test expected-result="unavailable">google.am</test>
+        <test expected-result="available">blabla123google.am</test>
+    </tld>
+    <tld name=".as">
+        <whois-service address="whois.nic.as" />
+        <test expected-result="unavailable">google.as</test>
+        <test expected-result="available">blabla123google.as</test>
+    </tld>            
+    <tld name=".at">
+        <whois-service address="whois.nic.at" />
+        <test expected-result="unavailable">google.at</test>
+        <test expected-result="available">blabla123google.at</test>
+    </tld>            
+    <tld name=".be">
+        <whois-service address="whois.dns.be" />
+        <test expected-result="unavailable">google.be</test>
+        <test expected-result="available">blabla123google.be</test>
+    </tld>            
+    <tld name=".br">
+        <whois-service address="whois.nic.br" />
+        <test expected-result="unavailable">google.br</test>
+        <test expected-result="available">blabla123google.br</test>
+    </tld>            
+    <tld name=".bz">
+        <whois-service address="whois.afilias-grs.info" />
+        <test expected-result="unavailable">google.bz</test>
+        <test expected-result="available">blabla123google.bz</test>
+    </tld>            
+    <tld name=".ca">
+        <whois-service address="whois.cira.ca" />
+        <test expected-result="unavailable">google.ca</test>
+        <test expected-result="available">blabla123google.ca</test>
+    </tld>            
+    <tld name=".cc">
+        <whois-service address="whois.nic.cc" />
+        <test expected-result="unavailable">google.cc</test>
+        <test expected-result="available">blabla123google.cc</test>
+    </tld>            
+    <tld name=".cd">
+        <whois-service address="whois.nic.cd" />
+        <test expected-result="unavailable">google.cd</test>
+        <test expected-result="available">blabla123google.cd</test>
+    </tld>            
+    <tld name=".ch">
+        <whois-service address="whois.nic.ch" />
+        <test expected-result="unavailable">google.ch</test>
+        <test expected-result="available">blabla123google.ch</test>
+    </tld>            
+    <tld name=".cl">
+        <whois-service address="whois.nic.cl" />
+        <test expected-result="unavailable">google.cl</test>
+        <test expected-result="available">blabla123google.cl</test>
+    </tld>            
+    <tld name=".cn">
+        <whois-service address="whois.cnnic.net.cn" />
+        <whois-service address="whois.paycenter.com.cn" />
+        <whois-service address="whois.dns.com.cn" />
+        <test expected-result="unavailable">google.cn</test>
+        <test expected-result="available">blabla123google.cn</test>
+    </tld>            
+    <tld name=".co">
+        <whois-service address="whois.nic.co" />
+        <test expected-result="unavailable">google.co</test>
+        <test expected-result="available">blabla123google.co</test>
+    </tld>            
+    <tld name=".co.nz">
+        <whois-service address="whois.srs.net.nz" />
+        <test expected-result="unavailable">google.co.nz</test>
+        <test expected-result="available">blabla123google.co.nz</test>
+    </tld>            
+    <tld name=".co.uk">
+        <whois-service address="whois.nic.uk" />
+        <test expected-result="unavailable">google.co.uk</test>
+        <test expected-result="available">blabla123google.co.uk</test>
+    </tld>            
+    <tld name=".com.au">
+        <whois-service address="whois.ausregistry.net.au" />
+        <test expected-result="unavailable">google.com.au</test>
+        <test expected-result="available">blabla123google.com.au</test>
+    </tld>            
+    <tld name=".cx">
+        <whois-service address="whois.nic.cx" />
+        <test expected-result="unavailable">google.cx</test>
+        <test expected-result="available">blabla123google.cx</test>
+    </tld>            
+    <tld name=".cz">
+        <whois-service address="whois.nic.cz" />
+        <test expected-result="unavailable">google.cz</test>
+        <test expected-result="available">blabla123google.cz</test>
+    </tld>            
+    <tld name=".de">
+        <whois-service address="whois.denic.de" />
+        <whois-service address="whois.antagus.de" />
+        <whois-service address="whois.your-server.de" />
+        <test expected-result="unavailable">google.de</test>
+        <test expected-result="available">blabla123google.de</test>
+    </tld>            
+    <tld name=".dk">
+        <whois-service address="whois.dk-hostmaster.dk" />
+        <test expected-result="unavailable">google.dk</test>
+        <test expected-result="available">blabla123google.dk</test>
+    </tld>            
+    <tld name=".es">
+        <whois-service address="whois.nic.es" />
+        <test expected-result="unavailable">google.es</test>
+        <test expected-result="available">blabla123google.es</test>
+    </tld>            
+    <tld name=".eu">
+        <whois-service address="whois.eu" />
+        <test expected-result="unavailable">google.eu</test>
+        <test expected-result="available">blabla123google.eu</test>
+    </tld>            
+    <tld name=".eu.com">
+        <whois-service address="whois.centralnic.com" />
+        <test expected-result="unavailable">google.eu.com</test>
+        <test expected-result="available">blabla123google.eu.com</test>
+        
+    </tld>            
+    <tld name=".fi">
+        <whois-service address="whois.ficora.fi" />
+        <test expected-result="unavailable">google.fi</test>
+        <test expected-result="available">blabla123google.fi</test>
+    </tld>            
+    <tld name=".fr">
+        <whois-service address="whois.nic.fr" />
+        <test expected-result="unavailable">google.fr</test>
+        <test expected-result="available">blabla123google.fr</test>
+    </tld>            
+    <tld name=".gs">
+        <whois-service address="whois.nic.gs" />
+        <test expected-result="unavailable">google.gs</test>
+        <test expected-result="available">blabla123google.gs</test>
+    </tld>            
+    <tld name=".hk">
+        <whois-service address="whois.hkirc.hk" />
+        <test expected-result="unavailable">google.hk</test>
+        <test expected-result="available">blabla123google.hk</test>
+    </tld>            
+    <tld name=".hr">
+        <whois-service address="registrar.carnet.hr" />
+        <test expected-result="unavailable">google.hr</test>
+        <test expected-result="available">blabla123google.hr</test>
+    </tld>            
+    <tld name=".ie">
+        <whois-service address="whois.domainregistry.ie" />
+        <test expected-result="unavailable">google.ie</test>
+        <test expected-result="available">blabla123google.ie</test>
+    </tld>            
+    <tld name=".il">
+        <whois-service address="whois.isoc.org.il" />
+        <test expected-result="unavailable">google.il</test>
+        <test expected-result="available">blabla123google.il</test>
+    </tld>            
+    <tld name=".im">
+        <whois-service address="whois.nic.im" />
+        <test expected-result="unavailable">google.im</test>
+        <test expected-result="available">blabla123google.im</test>
+    </tld>            
+    <tld name=".in">
+        <whois-service address="whois.inregistry.net" />
+        <test expected-result="unavailable">google.in</test>
+        <test expected-result="available">blabla123google.in</test>
+    </tld>            
+    <tld name=".io">
+        <whois-service address="whois.nic.io" />
+        <test expected-result="unavailable">google.io</test>
+        <test expected-result="available">blabla123google.io</test>
+    </tld>            
+    <tld name=".is">
+        <whois-service address="whois.isnic.is" />
+        <test expected-result="unavailable">google.is</test>
+        <test expected-result="available">blabla123google.is</test>
+    </tld>            
+    <tld name=".it">
+        <whois-service address="whois.nic.it" />
+        <test expected-result="unavailable">google.it</test>
+        <test expected-result="available">blabla123google.it</test>
+    </tld>            
+    <tld name=".jp">
+        <whois-service address="whois.jprs.jp" />
+        <test expected-result="unavailable">google.jp</test>
+        <test expected-result="available">blabla123google.jp</test>
+    </tld>            
+    <tld name=".kr">
+        <whois-service address="whois.nic.or.kr" />
+        <test expected-result="unavailable">google.kr</test>
+        <test expected-result="available">blabla123google.kr</test>
+        
+    </tld>            
+    <tld name=".la">
+        <whois-service address="whois.nic.la" />
+        <test expected-result="unavailable">google.la</test>
+        <test expected-result="available">blabla123google.la</test>
+    </tld>            
+    <tld name=".li">
+        <whois-service address="whois.nic.li" />
+        <test expected-result="unavailable">google.li</test>
+        <test expected-result="available">blabla123google.li</test>
+    </tld>            
+    <tld name=".lu">
+        <whois-service address="whois.dns.lu" />
+        <test expected-result="unavailable">google.lu</test>
+        <test expected-result="available">blabla123google.lu</test>
+    </tld>            
+    <tld name=".md">
+        <whois-service address="whois.nic.md" />
+        <test expected-result="unavailable">google.md</test>
+        <test expected-result="available">blabla123google.md</test>
+    </tld>            
+    <tld name=".me">
+        <whois-service address="whois.nic.me" />
+        <test expected-result="unavailable">google.me</test>
+        <test expected-result="available">blabla123google.me</test>
+    </tld>            
+    <tld name=".tc">
+        <whois-service address="whois.adamsnames.tc" />
+        <test expected-result="unavailable">google.tc</test>
+        <test expected-result="available">blabla123google.tc</test>
+    </tld>            
+    <tld name=".vg">
+        <whois-service address="whois.nic.vg" />
+        <test expected-result="unavailable">google.vg</test>
+        <test expected-result="available">blabla123google.vg</test>
+    </tld>            
+    <tld name=".tf">
+        <whois-service address="whois.nic.tf" />
+        <test expected-result="unavailable">google.tf</test>
+        <test expected-result="available">blabla123google.tf</test>
+    </tld>            
+    <tld name=".vc">
+        <whois-service address="whois2.afilias-grs.net" />
+        <test expected-result="unavailable">google.vc</test>
+        <test expected-result="available">blabla123google.vc</test>
+    </tld>            
+    <tld name=".ms">
+        <whois-service address="whois.nic.ms" />
+        <test expected-result="unavailable">google.ms</test>
+        <test expected-result="available">blabla123google.ms</test>
+    </tld>            
+    <tld name=".my">
+        <whois-service address="whois.mynic.net.my" />
+        <test expected-result="unavailable">google.my</test>
+        <test expected-result="available">blabla123google.my</test>
+    </tld>            
+    <tld name=".nl">
+        <whois-service address="whois.domain-registry.nl" />
+        <test expected-result="unavailable">google.nl</test>
+        <test expected-result="available">blabla123google.nl</test>
+    </tld>            
+    <tld name=".no">
+        <whois-service address="whois.norid.no" />
+        <test expected-result="unavailable">google.no</test>
+        <test expected-result="available">blabla123google.no</test>
+    </tld>            
+    <tld name=".nu">
+        <whois-service address="whois.nic.nu" />
+        <test expected-result="unavailable">google.nu</test>
+        <test expected-result="available">blabla123google.nu</test>
+    </tld>            
+    <tld name=".pl">
+        <whois-service address="whois.dns.pl" />
+        <test expected-result="unavailable">google.pl</test>
+        <test expected-result="available">blabla123google.pl</test>
+    </tld>            
+    <tld name=".pt">
+        <whois-service address="whois.dns.pt" />
+        <test expected-result="unavailable">google.pt</test>
+        <test expected-result="available">blabla123google.pt</test>
+    </tld>            
+    <tld name=".ro">
+        <whois-service address="whois.rotld.ro" />
+        <test expected-result="unavailable">google.ro</test>
+        <test expected-result="available">blabla123google.ro</test>
+    </tld>            
+    <tld name=".ru">
+        <whois-service address="whois.ripn.net" />
+        <whois-service address="whois.nic.ru" />
+        <test expected-result="unavailable">google.ru</test>
+        <test expected-result="available">blabla123google.ru</test>
+    </tld>            
+    <tld name=".se">
+        <whois-service address="whois.iis.se" />
+        <test expected-result="unavailable">google.se</test>
+        <test expected-result="available">blabla123google.se</test>
+    </tld>            
+    <tld name=".sg">
+        <whois-service address="whois.nic.net.sg" />
+        <test expected-result="unavailable">google.sg</test>
+        <test expected-result="available">blabla123google.sg</test>
+    </tld>            
+    <tld name=".sh">
+        <whois-service address="whois.nic.sh" />
+        <test expected-result="unavailable">google.sh</test>
+        <test expected-result="available">blabla123google.sh</test>
+    </tld>            
+    <tld name=".si">
+        <whois-service address="whois.arnes.si" />
+        <test expected-result="unavailable">google.si</test>
+        <test expected-result="available">blabla123google.si</test>
+    </tld>            
+    <tld name=".sk">
+        <whois-service address="whois.sk-nic.sk" />
+        <test expected-result="unavailable">google.sk</test>
+        <test expected-result="available">blabla123google.sk</test>
+    </tld>            
+    <tld name=".st">
+        <whois-service address="whois.nic.st" />
+        <test expected-result="unavailable">google.st</test>
+        <test expected-result="available">blabla123google.st</test>
+    </tld>            
+    <tld name=".th">
+        <whois-service address="whois.thnic.net" />
+        <test expected-result="unavailable">google.th</test>
+        <test expected-result="available">blabla123google.th</test>
+    </tld>            
+    <tld name=".tk">
+        <whois-service address="whois.dot.tk" />
+        <test expected-result="unavailable">google.tk</test>
+        <test expected-result="available">blabla123google.tk</test>
+    </tld>            
+    <tld name=".tm">
+        <whois-service address="whois.nic.tm" />
+        <test expected-result="unavailable">google.tm</test>
+        <test expected-result="available">blabla123google.tm</test>
+    </tld>            
+    <tld name=".to">
+        <whois-service address="monarch.tonic.to" />
+        <test expected-result="unavailable">google.to</test>
+        <test expected-result="available">blabla123google.to</test>
+    </tld>            
+    <tld name=".tv">
+        <whois-service address="whois.nic.tv" />
+        <test expected-result="unavailable">google.tv</test>
+        <test expected-result="available">blabla123google.tv</test>
+    </tld>            
+    <tld name=".tw">
+        <whois-service address="whois.twnic.net.tw" />
+        <test expected-result="unavailable">google.tw</test>
+        <test expected-result="available">blabla123google.tw</test>
+    </tld>            
+    <tld name=".ua">
+        <whois-service address="whois.ua" />
+        <test expected-result="unavailable">google.ua</test>
+        <test expected-result="available">blabla123google.ua</test>
+    </tld>            
+    <tld name=".us">
+        <whois-service address="whois.nic.us" />
+        <test expected-result="unavailable">google.us</test>
+        <test expected-result="available">blabla123google.us</test>
+    </tld>            
+    <tld name=".ws">
+        <whois-service address="whois.nic.ws" />
+        <test expected-result="unavailable">google.ws</test>
+        <test expected-result="available">blabla123google.ws</test>
+    </tld>            
+    <tld name=".ir">
+        <whois-service address="whois.nic.ir" />
+        <test expected-result="unavailable">google.ir</test>
+        <test expected-result="available">blabla123google.ir</test>
+    </tld>            
+    <tld name=".hu">
+        <whois-service address="whois.nic.hu" />
+        <test expected-result="unavailable">google.hu</test>
+        <test expected-result="available">blabla123google.hu</test>
+    </tld>            
+    <tld name=".lt">
+        <whois-service address="whois.domreg.lt" />
+        <test expected-result="unavailable">google.lt</test>
+        <test expected-result="available">blabla123google.lt</test>
+    </tld>            
+    <tld name=".lv">
+        <whois-service address="whois.nic.lv" />
+        <whois-service address="whois.fiducia.lv" />
+        <test expected-result="unavailable">google.lv</test>
+        <test expected-result="available">blabla123google.lv</test>
+    </tld>            
+    <tld name=".com.mx">
+        <whois-service address="whois.nic.mx" />
+        <test expected-result="unavailable">google.com.mx</test>
+        <test expected-result="available">blabla123google.com.mx</test>
+    </tld>            
+    <tld name=".bg">
+        <whois-service address="whois.register.bg" />
+        <test expected-result="unavailable">google.bg</test>
+        <test expected-result="available">blabla123google.bg</test>
+    </tld>            
+    <tld name=".by">
+        <whois-service address="whois.cctld.by" />
+        <test expected-result="unavailable">google.by</test>
+        <test expected-result="available">blabla123google.by</test>        
+    </tld>            
+    <tld name=".mu">
+        <whois-service address="whois.nic.mu" />
+        <test expected-result="unavailable">google.mu</test>
+        <test expected-result="available">blabla123google.mu</test>
+    </tld>            
+    <tld name=".ee">
+        <whois-service address="whois.tld.ee" />
+        <test expected-result="unavailable">google.ee</test>
+        <test expected-result="available">blabla123google.ee</test>        
+    </tld>            
+    <tld name=".ma">
+        <whois-service address="whois.iam.net.ma" />
+        <test expected-result="unavailable">google.ma</test>
+        <test expected-result="available">blabla123google.ma</test>        
+    </tld>            
+    <tld name=".ae">
+        <whois-service address="whois.aeda.net.ae" />
+        <test expected-result="unavailable">google.ae</test>
+        <test expected-result="available">blabla123google.ae</test>
+    </tld>            
+    <tld name=".so">
+        <whois-service address="whois.nic.so" />
+        <test expected-result="unavailable">google.so</test>
+        <test expected-result="available">blabla123google.so</test>        
+    </tld>            
+    <tld name=".uz">
+        <whois-service address="www.whois.uz" />
+        <test expected-result="unavailable">google.uz</test>
+        <test expected-result="available">blabla123google.uz</test>
+    </tld>            
+    <tld name=".co.uz">
+        <whois-service address="www.whois.uz" />
+        <test expected-result="unavailable">google.co.uz</test>
+        <test expected-result="available">blabla123google.co.uz</test>    
+    </tld>            
+    <tld name=".dz">
+        <whois-service address="whois.nic.dz" />
+        <test expected-result="unavailable">google.dz</test>
+        <test expected-result="available">blabla123google.dz</test>        
+    </tld>            
+    <!-- ccTLD [END] -->
+
+    <!-- Common patterns (will work if no tld-specific pattern match) [BEGIN] -->
+    <pattern priority="300" type="qouta-exceeded" mode="string">the whois query quota for</pattern>
+    <pattern priority="300" type="qouta-exceeded" mode="string">too many requests</pattern>
+    <pattern priority="300" type="qouta-exceeded" mode="string">Quota exceeded</pattern>
+
+    <pattern priority="200" type="unavailable" mode="string">registered until cancelled</pattern>
+    <pattern priority="200" type="unavailable" mode="string">not available</pattern>
+    <pattern priority="200" type="unavailable" mode="string">registered until expiry date</pattern>
+    <pattern priority="200" type="unavailable" mode="string">domain registration date:</pattern>
+    <pattern priority="200" type="unavailable" mode="string">registered:</pattern>
+    <pattern priority="200" type="unavailable" mode="string">registration:</pattern>
+    <pattern priority="200" type="unavailable" mode="string">expiration-date:</pattern>
+    <pattern priority="200" type="unavailable" mode="string">expire-date:</pattern>
+    <pattern priority="200" type="unavailable" mode="string">expiration date:</pattern>
+    <pattern priority="200" type="unavailable" mode="string">expiry date:</pattern>
+    <pattern priority="200" type="unavailable" mode="string">domain expiration date:</pattern>
+    <pattern priority="200" type="unavailable" mode="string">not disclosed</pattern>
+    <pattern priority="200" type="unavailable" mode="string">status:                 registered</pattern>
+    <pattern priority="200" type="unavailable" mode="string">status:      registered</pattern>
+    <pattern priority="200" type="unavailable" mode="string">expires:</pattern>
+    <pattern priority="200" type="unavailable" mode="string">and will be replenished in</pattern>
+    <pattern priority="200" type="unavailable" mode="string">registrant's address:</pattern>
+
+    <pattern priority="100" type="available" mode="string">no data was found to match the request criteria.</pattern>   
+    <pattern priority="100" type="available" mode="string">domain status:         available</pattern>   
+    <pattern priority="100" type="available" mode="string">no data was found to match the request criteria</pattern>   
+    <pattern priority="100" type="available" mode="string">status:      free</pattern>   
+    <pattern priority="100" type="available" mode="string">no information available</pattern>   
+    <pattern priority="100" type="available" mode="string">not found</pattern>   
+    <pattern priority="100" type="available" mode="string">no such domain</pattern>   
+    <pattern priority="100" type="available" mode="string">no entries found</pattern>   
+    <pattern priority="100" type="available" mode="string">available</pattern>   
+    <pattern priority="100" type="available" mode="string">no match for</pattern>   
+    
+    <pattern priority="0" type="unavailable" mode="string">registrar</pattern>   
+    <pattern priority="0" type="unavailable" mode="string">registar</pattern>   
+    <pattern priority="0" type="unavailable" mode="string">registrant</pattern>   
+    <pattern priority="0" type="unavailable" mode="string">owner</pattern>   
+    <pattern priority="0" type="unavailable" mode="string">expiration date</pattern>   
+    <pattern priority="0" type="unavailable" mode="string">status: connect</pattern>   
+    <pattern priority="0" type="unavailable" mode="string">registered</pattern>   
+    <pattern priority="0" type="unavailable" mode="string">expires</pattern>   
+    <!-- Common patterns (will work if no tld-specific pattern match) [BND] -->                
+
+<!-- This services also can be used
+"whois.ja.net" .ac.uk, .gov.uk
+"whois.crsnic.net"
+"whois.godaddy.com"
+"whois.networksolutions.com"
+"whois.name.com"
+"whois.tucows.com"
+"whois.publicdomainregistry.com"
+"whois.register.com"
+"whois.enom.com"
+"whois.wildwestdomains.com"
+"whois.markmonitor.com"
+"whois.nic.gov"
+"whois.afilias.net"
+"whois.registrypro.pro"
+"whois.dotmobiregistry.net"
+"whois.nic.name"
+"whois.nic.travel"
+"whois.nic.tel"
+"whois.nic.xxx"
+"whois.cat"
+"whois.educause.net"
+"whois.corporatedomains.com"
+"whois.moniker.com"
+"whois.domain.com"
+"whois.directnic.com"
+"whois.ename.com"
+"whois.onlinenic.com"
+"whois.ovh.com"
+"whois.melbourneit.com"
+"whois.ascio.com"
+"whois.schlund.info"
+"whois.1und1.info"
+"whois.internet.bs"
+"whois.yourjungle.com"
+"whois.worldbizdomains.com"
+"whois.world4you.com"
+"whois.west263.com"
+"whois.udag.net"
+"whois.topsystem.com"
+"whois.tigertech.net"
+"whois.sibername.com"
+"whois.safenames.net"
+"whois.rrpproxy.net"
+"whois.registrygate.com"
+"whois.reg2c.com"
+"whois.rebel.com"
+"whois.purenic.com"
+"whois.psi-usa.info"
+"whois.pairnic.com"
+"whois.openname.com"
+"whois.omnis.com"
+"whois.nicreg.com"
+"whois.neudomain.com"
+"whois.networking4all.com"
+"whois.netestate.com"
+"whois.netart-registrar.com"
+"whois.net4domains.com"
+"whois.neonic.com"
+"whois.namefull.com"
+"whois.namebright.com"
+"whois.misternic.com"
+"whois.meshdigital.com"
+"whois.lexsynergy.com"
+"whois.ladasdomains.com"
+"whois.joker.com"
+"whois.instantnames.com"
+"whois.haveaname.com"
+"whois.gkg.net"
+"whois.gandi.net"
+"whois.eurodns.com"
+"whois.epik.com"
+"whois.enterprice.net"
+"whois.encirca.com"
+"whois.dotroll.com"
+"whois.domus-llc.com"
+"whois.domrobot.com"
+"whois.domainname.com"
+"whois.domainclip.com"
+"whois.discount-domain.com"
+"whois.cronon.net"
+"whois.corenic.net"
+"whois.bookmyname.com"
+"whois.bluerazor.com"
+"whois.allglobalnames.com"
+"whois.activeregistrar.com"
+"grs-whois.hichina.com"
+-->
+
+</whois-config>
