@@ -345,7 +345,7 @@
         <test expected-result="available">blabla123google.ms</test>
     </tld>            
     <tld name=".my">
-        <whois-service address="whois.mynic.net.my" />
+        <whois-service address="whois.mynic.my" />
         <test expected-result="unavailable">google.my</test>
         <test expected-result="available">blabla123google.my</test>
     </tld>            
@@ -437,7 +437,7 @@
         <test expected-result="available">blabla123google.tm</test>
     </tld>            
     <tld name=".to">
-        <whois-service address="monarch.tonic.to" />
+        <whois-service address="whois.tonic.to" />
         <test expected-result="unavailable">google.to</test>
         <test expected-result="available">blabla123google.to</test>
     </tld>            
@@ -464,7 +464,7 @@
         <test expected-result="available">blabla123google.us</test>
     </tld>            
     <tld name=".ws">
-        <whois-service address="whois.nic.ws" />
+        <whois-service address="whois.website.ws" />
         <test expected-result="unavailable">google.ws</test>
         <test expected-result="available">blabla123google.ws</test>
     </tld>            
