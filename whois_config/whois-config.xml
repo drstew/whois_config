@@ -3,16 +3,16 @@
     <!-- EXAMPLES
         <tld name=".com">
             <whois-service address="internic.net">
-                <pattern priority="100" type="quota-exceeded" mode="string">Quota exceeded</pattern>
+                <pattern type="quota-exceeded" mode="string">Quota exceeded</pattern>
             </whois-service>
             <test expected-result="available">blabla123google.com</test>
             <test expected-result="unavailable">google.com</test>
         </tld>
         <tld name=".net">
             <whois-service address="internic.net">
-                <pattern priority="300" type="quota-exceeded" mode="string">Quota exceeded</pattern>
-                <pattern priority="200" type="unavailable" mode="string">Registered</pattern>
-                <pattern priority="100" type="available" mode="string">Domain is available</pattern>
+                <pattern type="quota-exceeded" mode="string">Quota exceeded</pattern>
+                <pattern type="unavailable" mode="string">Registered</pattern>
+                <pattern type="available" mode="string">Domain is available</pattern>
             </whois-service>
             <test expected-result="available">blabla123google.net</test>
             <test expected-result="available">blabla567google.net</test>
@@ -567,48 +567,48 @@
     <!-- ccTLD [END] -->
 
     <!-- Common patterns (will work if no tld-specific pattern match) [BEGIN] -->
-    <pattern priority="300" type="quota-exceeded" mode="string">the whois query quota for</pattern>
-    <pattern priority="300" type="quota-exceeded" mode="string">too many requests</pattern>
-    <pattern priority="300" type="quota-exceeded" mode="string">Quota exceeded</pattern>
+    <pattern type="quota-exceeded" mode="string">the whois query quota for</pattern>
+    <pattern type="quota-exceeded" mode="string">too many requests</pattern>
+    <pattern type="quota-exceeded" mode="string">Quota exceeded</pattern>
 
-    <pattern priority="200" type="unavailable" mode="string">registered until cancelled</pattern>
-    <pattern priority="200" type="unavailable" mode="string">not available</pattern>
-    <pattern priority="200" type="unavailable" mode="string">registered until expiry date</pattern>
-    <pattern priority="200" type="unavailable" mode="string">domain registration date:</pattern>
-    <pattern priority="200" type="unavailable" mode="string">registered:</pattern>
-    <pattern priority="200" type="unavailable" mode="string">registration:</pattern>
-    <pattern priority="200" type="unavailable" mode="string">expiration-date:</pattern>
-    <pattern priority="200" type="unavailable" mode="string">expire-date:</pattern>
-    <pattern priority="200" type="unavailable" mode="string">expiration date:</pattern>
-    <pattern priority="200" type="unavailable" mode="string">expiry date:</pattern>
-    <pattern priority="200" type="unavailable" mode="string">domain expiration date:</pattern>
-    <pattern priority="200" type="unavailable" mode="string">not disclosed</pattern>
-    <pattern priority="200" type="unavailable" mode="string">status:                 registered</pattern>
-    <pattern priority="200" type="unavailable" mode="string">status:      registered</pattern>
-    <pattern priority="200" type="unavailable" mode="string">expires:</pattern>
-    <pattern priority="200" type="unavailable" mode="string">and will be replenished in</pattern>
-    <pattern priority="200" type="unavailable" mode="string">registrant's address:</pattern>
+    <pattern type="unavailable" mode="string">registered until cancelled</pattern>
+    <pattern type="unavailable" mode="string">not available</pattern>
+    <pattern type="unavailable" mode="string">registered until expiry date</pattern>
+    <pattern type="unavailable" mode="string">domain registration date:</pattern>
+    <pattern type="unavailable" mode="string">registered:</pattern>
+    <pattern type="unavailable" mode="string">registration:</pattern>
+    <pattern type="unavailable" mode="string">expiration-date:</pattern>
+    <pattern type="unavailable" mode="string">expire-date:</pattern>
+    <pattern type="unavailable" mode="string">expiration date:</pattern>
+    <pattern type="unavailable" mode="string">expiry date:</pattern>
+    <pattern type="unavailable" mode="string">domain expiration date:</pattern>
+    <pattern type="unavailable" mode="string">not disclosed</pattern>
+    <pattern type="unavailable" mode="string">status:                 registered</pattern>
+    <pattern type="unavailable" mode="string">status:      registered</pattern>
+    <pattern type="unavailable" mode="string">expires:</pattern>
+    <pattern type="unavailable" mode="string">and will be replenished in</pattern>
+    <pattern type="unavailable" mode="string">registrant's address:</pattern>
 
-    <pattern priority="100" type="available" mode="string">no data was found to match the request criteria.</pattern>   
-    <pattern priority="100" type="available" mode="string">domain status:         available</pattern>   
-    <pattern priority="100" type="available" mode="string">no data was found to match the request criteria</pattern>   
-    <pattern priority="100" type="available" mode="string">status:      free</pattern>   
-    <pattern priority="100" type="available" mode="string">no information available</pattern>   
-    <pattern priority="100" type="available" mode="string">not found</pattern>   
-    <pattern priority="100" type="available" mode="string">no such domain</pattern>   
-    <pattern priority="100" type="available" mode="string">no entries found</pattern>   
-    <pattern priority="100" type="available" mode="string">available</pattern>   
-    <pattern priority="100" type="available" mode="string">no match for</pattern>
-    <pattern priority="100" type="available" mode="string">no match</pattern>
+    <pattern type="available" mode="string">no data was found to match the request criteria.</pattern>   
+    <pattern type="available" mode="string">domain status:         available</pattern>   
+    <pattern type="available" mode="string">no data was found to match the request criteria</pattern>   
+    <pattern type="available" mode="string">status:      free</pattern>   
+    <pattern type="available" mode="string">no information available</pattern>   
+    <pattern type="available" mode="string">not found</pattern>   
+    <pattern type="available" mode="string">no such domain</pattern>   
+    <pattern type="available" mode="string">no entries found</pattern>   
+    <pattern type="available" mode="string">available</pattern>   
+    <pattern type="available" mode="string">no match for</pattern>
+    <pattern type="available" mode="string">no match</pattern>
     
-    <pattern priority="0" type="unavailable" mode="string">registrar</pattern>   
-    <pattern priority="0" type="unavailable" mode="string">registar</pattern>   
-    <pattern priority="0" type="unavailable" mode="string">registrant</pattern>   
-    <pattern priority="0" type="unavailable" mode="string">owner</pattern>   
-    <pattern priority="0" type="unavailable" mode="string">expiration date</pattern>   
-    <pattern priority="0" type="unavailable" mode="string">status: connect</pattern>   
-    <pattern priority="0" type="unavailable" mode="string">registered</pattern>   
-    <pattern priority="0" type="unavailable" mode="string">expires</pattern>   
+    <pattern type="unavailable" mode="string">registrar</pattern>   
+    <pattern type="unavailable" mode="string">registar</pattern>   
+    <pattern type="unavailable" mode="string">registrant</pattern>   
+    <pattern type="unavailable" mode="string">owner</pattern>   
+    <pattern type="unavailable" mode="string">expiration date</pattern>   
+    <pattern type="unavailable" mode="string">status: connect</pattern>   
+    <pattern type="unavailable" mode="string">registered</pattern>   
+    <pattern type="unavailable" mode="string">expires</pattern>   
     <!-- Common patterns (will work if no tld-specific pattern match) [BND] -->                
 
 <!-- This services also can be used
