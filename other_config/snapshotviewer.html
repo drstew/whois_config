@@ -1,0 +1,297 @@
+<html>
+  <head>
+    <title>$DOMAINNAME$</title>
+    <!-- 
+    JUST TO CHECK THAT EVERYTHING WORK FINE 
+    $TF$
+    $CF$
+    $PA$
+    $DA$
+    $RD$
+    $EBL$
+    $LINKS$
+    $TITLES$
+    -->
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="http://beaverslider.com/code/current/beaverslider.js"></script>
+    <script src="http://beaverslider.com/code/current/beaverslider-effects.js"></script> 
+	
+	<link href="http://pbnhq.com/ronin/css/bootstrap.min.css" rel="stylesheet">
+	
+	<!-- page css files -->
+	<link href="http://www.pbnhq.com/ronin/css/font-awesome.min.css" rel="stylesheet">
+	<link href="http://www.pbnhq.com/ronin/css/jquery-ui-1.10.3.custom.min.css" rel="stylesheet">
+	<link href="http://www.pbnhq.com/ronin/css/jquery.gritter.css" rel="stylesheet">
+	<link href="http://www.pbnhq.com/ronin/css/jquery.noty.css" rel="stylesheet">
+	<link href="http://www.pbnhq.com/ronin/css/noty_theme_default.css" rel="stylesheet">
+	<link href="https://rawgit.com/lucaong/jQCloud/master/jqcloud/jqcloud.css" rel="stylesheet">
+	
+	
+	<!-- main style -->
+	<link href="http://www.pbnhq.com/ronin/css/style.min.css" rel="stylesheet">
+    <script>
+    $(function(){
+        var slider = new BeaverSlider({
+            type: "slider",
+            structure: {
+                container: {
+                    id: "my-slider",
+                    width: 900,
+                    height: 605
+                },
+                controls: {
+                    previewMode: true,
+                    align: "center",
+                    containerClass: "control-container-img",
+                    elementClass: "control-element-img",
+                    elementActiveClass: "control-element-active-img"
+                }
+            },
+            content: {
+              images: [$SNAPSHOTS$]
+            },
+            animation: {
+              effects: "fadeOut:800:10:10", 
+              interval: 3600000,
+            },
+            events: {
+                afterSlideStart: function(slider) {
+                    var scrollTo = (slider.currentImage - 2) * $(".control-element-active-img").width();
+                    $(".control-container-img").animate({ scrollLeft: scrollTo }, 400);
+                }
+            }
+        });   
+    });
+    </script>
+	<script type="text/javascript">
+            var words = '$LINKS$'.split(/,| /).filter(function(n){ return n != undefined });
+            var cloudSource = [];
+            words.forEach(function (word) {
+                var f = false;
+                cloudSource.forEach(function (cloudElement) {
+                    if (word === cloudElement.text) {
+                        cloudElement.weight++;
+                        f = true;
+                    }
+                });
+                if (!f) {
+                    cloudSource.push({text:word, weight:1});
+                }
+            });            
+            $(function () {
+                $("#linksCloud").jQCloud(cloudSource);
+            });
+        </script>   
+    <style>
+/* image-preview control elements */
+.control-container-img {
+    /* as far as contorls are displayed as inline-block this puts them to center */
+    /* choose left or right to put it to left/right */
+    text-align: center; 
+    
+    /* change this to the values you need */
+    margin-top: 1px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+.control-element-img, .control-element-active-img {
+    /* this displays element as inline-block; zoom and *display is a hack for ie7 which does not support inline-block */
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+    
+    /* change this to the values you need */
+    width: 150px;
+    height: 88px;
+    margin: 0;
+    cursor: pointer;
+    opacity: 0.4;
+    filter: alpha(opacity=40)
+}
+.control-element-img:hover {
+    opacity: 0.7;
+    filter: alpha(opacity=70)
+}
+.control-element-active-img {
+    opacity: 1;
+    filter: alpha(opacity=100)
+}
+.control-element-img img, .control-element-active-img img {
+    width: 150px;
+    height: 88px;
+}
+body {
+	background-image: url("http://pbnhq.com/ronin/img/bg.jpg");
+    
+}
+
+#header-main {
+    width: 100%;
+    text-align:center;
+    margin: 0 auto;
+}
+#footer {
+    text-align:center;
+    padding:0px;
+}
+
+.row-eq-height{
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+    </style>
+  </head>
+
+<body>   
+    <div id="header-main">
+		<img src="http://www.pbnhq.com/ronin-logo-zilla2.png" style="width: 596px;"></img>
+	</div>
+<div class="row row-eq-height">	
+	<!--Left Column-->
+	<div class="col-sm-3">
+		<div class="box">
+			<div class="box-header">
+				<h2></span>Domain Stats: $DOMAINNAME$</h2>
+			</div>
+			<div class="box-content">						
+				<div class="circleStats">
+					<div class="row">
+						<center><img src="http://www.pbnhq.com//ronin/img/majesticseo-sml.png"></img></center>
+							<div class="col-sm-6">
+								<div class="circleStatsItem red">
+									<i class="">TF</i>
+									<input type="text" value="$TF$" class="orangeCircle" />
+								</div>
+									<strong>Trust Flow</strong>
+							</div>
+							<div class="col-sm-6">	
+								<div class="circleStatsItem red">
+										<i class="">CF</i>
+										<input type="text" value="$CF$" class="orangeCircle" />
+								</div>
+									<strong>Citation Flow</strong>
+							</div>
+					</div>
+		<hr></hr>
+					<div class="row">
+						<center><img src="http://www.pbnhq.com//ronin/img/moz-sml.png"></img></center>
+							<div class="col-sm-6">
+								<div class="circleStatsItem blue">
+									<i class="">DA</i>
+									<input type="text" value="$DA$" class="blueCircle" />
+								</div>
+									<strong>Domain Authority</strong>
+							</div>
+							<div class="col-sm-6">	
+								<div class="circleStatsItem blue">
+									<i class="">PA</i>
+									<input type="text" value="$PA$" class="blueCircle" />
+								</div>
+									<strong>Page Authority</strong>
+							</div>
+					</div>
+		<hr></hr>
+					<div class="row">
+						<center><img src="http://www.pbnhq.com//ronin/img/majesticseo-sml.png"></img></center>
+							<div class="col-sm-6">
+								<div class="circleStatsItem green">
+									<i class="">LRD</i>
+									<input type="text" value="$RD$" class="greenCircle" />
+								</div>
+									<strong>Root Domains</strong>
+							</div>
+							<div class="col-sm-6">	
+								<div class="circleStatsItem green">
+									<i class="">BL</i>
+									<input type="text" value="$EBL$" class="greenCircle" />
+								</div>
+									<strong>Backlinks</strong>
+							</div>
+					</div>
+								
+				</div>
+							
+			</div>
+		</div>
+	</div>
+			
+		<!--Center Column-->
+	<div class="col-sm-8">
+		<div class="box">
+			<div class="box-header">
+				<center><h2></span>Spamzilla Snapshots</h2></center>	
+			</div>
+			<div class="box-content">
+				<div id="my-slider" style="width:900px; height:710px;"></div>
+			</div>
+		</div>
+	</div>
+        
+		<!--Right Column-->
+	<div class="col-sm-3">
+		<div class="box">
+			<div class="box-header">
+				<h2></span>Backlink Anchor Text</h2>
+			</div>
+				<div class="box-content">
+					<div id="linksCloud" style="width:300px; height:300px;"></div>
+				</div>
+		</div>
+		<div class="box">
+			<div class="box-header">
+				<h2></span>WayBack Titles</h2>
+			</div>
+			<div class="box-content">
+				<p>$TITLES$</p>
+			</div>
+		</div>
+		<div class="box">
+			<div class="box-header">
+				<h2></span>Social Signals</h2>
+			</div>
+			<div class="box-content">
+				<p></p>
+			</div>
+		</div>
+	</div>
+       
+		
+		<div id="footer"></div>
+    
+	
+	<script src="http://www.pbnhq.com/ronin/js/jquery-2.0.3.min.js"></script>
+
+	
+
+		<script type="text/javascript">
+			window.jQuery || document.write("<script src='assets/js/jquery-2.0.3.min.js'>"+"<"+"/script>");
+		</script>
+
+	
+	<script src="http://www.pbnhq.com/ronin/js/jquery-migrate-1.2.1.min.js"></script>
+	<script src="http://pbnhq.com/ronin/js/bootstrap.min.js"></script>
+	
+	
+	<!-- page scripts -->
+	<script src="http://www.pbnhq.com/ronin/js/jquery-ui-1.10.3.custom.min.js"></script>
+	<script src="http://www.pbnhq.com/ronin/js/jquery.knob.modified.min.js"></script>
+	<script src="http://www.pbnhq.com/ronin/js/jquery.gritter.min.js"></script>
+	<script src="http://www.pbnhq.com/ronin/js/jquery.noty.min.js"></script>
+	
+	<script src="https://rawgit.com/lucaong/jQCloud/master/jqcloud/jqcloud-1.0.4.min.js"></script>
+	<script src="http://www.pbnhq.com/ronin/js/jquery.noty.min.js"></script>
+	
+	<!-- theme scripts -->
+	<script src="http://www.pbnhq.com/ronin/js/default.min.js"></script>
+	<script src="http://www.pbnhq.com/ronin/js/core.min.js"></script>
+	
+	<!-- inline scripts related to this page -->
+	<script src="http://www.pbnhq.com/ronin/js/pages/ui.js"></script>
+	
+	
+</body>
+</html>
