@@ -89,7 +89,7 @@
     </tld>            
     <tld name=".be">
         <whois-service address="whois.dns.be" />
-        <test expected-result="unavailable">google.be</test>
+        <test expected-result="unavailable">proximus.be</test>
         <test expected-result="available">blabla123google.be</test>
     </tld>            
     <tld name=".br">
