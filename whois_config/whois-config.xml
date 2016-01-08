@@ -158,6 +158,7 @@
     <tld name=".com.au">
         <whois-service address="whois.ausregistry.net.au">
             <pattern type="available" mode="string">no data found</pattern>
+            <pattern type="quota-exceeded" mode="string">you have exceeded the query limit for your network or ip address and have been blacklisted</pattern>
         </whois-service>
         <test expected-result="unavailable">google.com.au</test>
         <test expected-result="available">blabla123google.com.au</test>
