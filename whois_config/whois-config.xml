@@ -279,6 +279,7 @@
     <tld name=".jp">
         <whois-service address="whois.jprs.jp">
             <pattern type="available" mode="string">no match!!</pattern>
+            <pattern type="unavailable" mode="string">domain information:</pattern>
         </whois-service>
         <test expected-result="unavailable">google.jp</test>
         <test expected-result="available">blabla123google.jp</test>
