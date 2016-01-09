@@ -374,7 +374,9 @@
         <test expected-result="available">blabla123google.nu</test>
     </tld>            
     <tld name=".pl">
-        <whois-service address="whois.dns.pl" />
+        <whois-service address="whois.dns.pl">
+            <pattern type="unavailable" mode="string">nameservers:</pattern>
+        </whois-service>
         <test expected-result="unavailable">google.pl</test>
         <test expected-result="available">blabla123google.pl</test>
     </tld>            
