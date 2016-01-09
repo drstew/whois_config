@@ -89,6 +89,7 @@
     </tld>            
     <tld name=".be">
         <whois-service address="whois.dns.be">
+            <pattern type="quota-exceeded" mode="string">ip address blocked</pattern>
             <pattern type="quota-exceeded" mode="string">excessive querying</pattern>
         </whois-service>
         <test expected-result="unavailable">proximus.be</test>
