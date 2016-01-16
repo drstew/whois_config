@@ -106,7 +106,9 @@
         <test expected-result="available">blabla123google.bz</test>
     </tld>            
     <tld name=".ca">
-        <whois-service address="whois.cira.ca" />
+        <whois-service address="whois.cira.ca">
+            <pattern type="unavailable" mode="string">the domain name provided is reserved for the use of a canadian municipality.</pattern>
+        </whois-service>
         <test expected-result="unavailable">google.ca</test>
         <test expected-result="available">blabla123google.ca</test>
     </tld>            
