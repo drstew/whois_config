@@ -277,7 +277,7 @@
         <test expected-result="available">blabla123google.is</test>
     </tld>            
     <tld name=".it">
-        <whois-service address="whois.nic.it" />
+        <whois-service address="whois.nic.it">
             <pattern type="available" mode="string">status:             available</pattern>
             <pattern type="unavailable" mode="string">status:             ok</pattern>
         </whois-service>
