@@ -156,7 +156,9 @@
         <test expected-result="available">blabla123google.co.nz</test>
     </tld>            
     <tld name=".co.uk">
-        <whois-service address="whois.nic.uk" />
+        <whois-service address="whois.nic.uk">
+            <pattern type="quota-exceeded" mode="string">the whois query quota for</pattern>
+        </whois-service>
         <test expected-result="unavailable">google.co.uk</test>
         <test expected-result="available">blabla123google.co.uk</test>
     </tld>            
