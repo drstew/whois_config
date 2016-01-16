@@ -281,6 +281,7 @@
         <whois-service address="whois.jprs.jp">
             <pattern type="available" mode="string">no match!!</pattern>
             <pattern type="unavailable" mode="string">domain information:</pattern>
+            <pattern type="quota-exceeded" mode="string">server busy</pattern>
         </whois-service>
         <test expected-result="unavailable">google.jp</test>
         <test expected-result="available">blabla123google.jp</test>
@@ -577,6 +578,9 @@
     <pattern type="quota-exceeded" mode="string">the whois query quota for</pattern>
     <pattern type="quota-exceeded" mode="string">too many requests</pattern>
     <pattern type="quota-exceeded" mode="string">Quota exceeded</pattern>
+    <pattern type="quota-exceeded" mode="string">server busy</pattern>
+    <pattern type="quota-exceeded" mode="string">ip address blocked</pattern>
+    <pattern type="quota-exceeded" mode="string">excessive querying</pattern>
 
     <pattern type="unavailable" mode="string">registered until cancelled</pattern>
     <pattern type="unavailable" mode="string">not available</pattern>
