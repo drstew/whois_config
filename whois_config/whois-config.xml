@@ -394,7 +394,10 @@
         <test expected-result="available">blabla123google.ro</test>
     </tld>            
     <tld name=".ru">
-        <whois-service address="whois.ripn.net" />
+        <whois-service address="whois.ripn.net">
+            <pattern type="available" mode="string">no entries found for the selected source(s).</pattern>
+            <pattern type="unavailable" mode="string">domain:</pattern>
+        </whois-service>
         <whois-service address="whois.nic.ru" />
         <test expected-result="unavailable">google.ru</test>
         <test expected-result="available">blabla123google.ru</test>
