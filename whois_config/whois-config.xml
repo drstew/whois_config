@@ -301,6 +301,9 @@
             <pattern type="available" mode="string">no match!!</pattern>
             <pattern type="unavailable" mode="string">domain information:</pattern>
             <pattern type="quota-exceeded" mode="string">server busy</pattern>
+            <pattern type="quota-exceeded" mode="string">cannot process your search request</pattern>
+            <pattern type="quota-exceeded" mode="string">service currently unavailable due to incoming of a large amount</pattern> 
+            <pattern type="quota-exceeded" mode="string">try again later</pattern>
         </whois-service>
         <test expected-result="unavailable">google.jp</test>
         <test expected-result="available">blabla123google.jp</test>
@@ -521,7 +524,9 @@
         <test expected-result="available">blabla123google.hu</test>
     </tld>            
     <tld name=".lt">
-        <whois-service address="whois.domreg.lt" />
+        <whois-service address="whois.domreg.lt">
+            <pattern type="quota-exceeded" mode="string">query limit</pattern>
+        </whois-service>
         <test expected-result="unavailable">google.lt</test>
         <test expected-result="available">blabla123google.lt</test>
     </tld>            
