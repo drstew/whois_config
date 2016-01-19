@@ -24,14 +24,18 @@
     <!-- gTLD [BEGIN] -->
     <tld name=".com">
         <whois-service address="whois.internic.net" />
-        <whois-service address="whois.crsnic.net" />
+        <whois-service address="whois.crsnic.net">
+            <pattern type="quota-exceeded" mode="string">you have reached configured rate limit.</pattern>
+        </whois-service>
         <whois-service address="whois.verisign-grs.com" />
         <test expected-result="unavailable">google.com</test>
         <test expected-result="available">blabla123google.com</test>
     </tld>
     <tld name=".net">
         <whois-service address="whois.internic.net" />
-        <whois-service address="whois.crsnic.net" />
+        <whois-service address="whois.crsnic.net">
+            <pattern type="quota-exceeded" mode="string">you have reached configured rate limit.</pattern>
+        </whois-service>
         <whois-service address="whois.verisign-grs.com" />
         <test expected-result="unavailable">google.net</test>
         <test expected-result="available">blabla123google.net</test>
@@ -83,6 +87,7 @@
     <tld name=".at">
         <whois-service address="whois.nic.at">
             <pattern type="available" mode="string">% nothing found</pattern>
+            <pattern type="quota-exceeded" mode="string">% quota exceeded</pattern>
         </whois-service>
         <test expected-result="unavailable">google.at</test>
         <test expected-result="available">blabla123google.at</test>
@@ -127,6 +132,7 @@
     <tld name=".ch">
         <whois-service address="whois.nic.ch">
             <pattern type="available" mode="string">we do not have an entry in our database matching your query.</pattern>
+            <pattern type="quota-exceeded" mode="string">you have exceeded this limit.</pattern>
         </whois-service>
         <test expected-result="unavailable">google.ch</test>
         <test expected-result="available">blabla123google.ch</test>
@@ -134,6 +140,7 @@
     <tld name=".cl">
         <whois-service address="whois.nic.cl">
             <pattern type="available" mode="string">no existe</pattern>
+            <pattern type="unavailable" mode="string">servidores de nombre</pattern>
         </whois-service>
         <test expected-result="unavailable">google.cl</test>
         <test expected-result="available">blabla123google.cl</test>
@@ -152,6 +159,8 @@
     </tld>            
     <tld name=".co.nz">
         <whois-service address="whois.srs.net.nz" />
+            <pattern type="quota-exceeded" mode="string">nzrs limited</pattern>
+        </whois-service>
         <test expected-result="unavailable">google.co.nz</test>
         <test expected-result="available">blabla123google.co.nz</test>
     </tld>            
@@ -178,7 +187,9 @@
         <test expected-result="available">blabla123google.cx</test>
     </tld>            
     <tld name=".cz">
-        <whois-service address="whois.nic.cz" />
+        <whois-service address="whois.nic.cz">
+            <pattern type="quota-exceeded" mode="string">your connection limit exceeded.</pattern>
+        </whois-service>
         <test expected-result="unavailable">google.cz</test>
         <test expected-result="available">blabla123google.cz</test>
     </tld>            
@@ -280,6 +291,7 @@
         <whois-service address="whois.nic.it">
             <pattern type="available" mode="string">status:             available</pattern>
             <pattern type="unavailable" mode="string">status:             ok</pattern>
+            <pattern type="unavailable" mode="string">status:             unassignable</pattern>
         </whois-service>
         <test expected-result="unavailable">google.it</test>
         <test expected-result="available">blabla123google.it</test>
@@ -295,6 +307,8 @@
     </tld>            
     <tld name=".kr">
         <whois-service address="whois.nic.or.kr" />
+            <pattern type="unavailable" mode="string">the requested domain name is restricted because of public interest.</pattern>
+        </whois-service>
         <test expected-result="unavailable">google.kr</test>
         <test expected-result="available">blabla123google.kr</test>
         
@@ -364,6 +378,7 @@
     </tld>            
     <tld name=".nl">
         <whois-service address="whois.domain-registry.nl">
+            <pattern type="available" mode="string">is free</pattern>
             <pattern type="quota-exceeded" mode="string">maximum number of requests per second exceeded</pattern>
         </whois-service>
         <test expected-result="unavailable">google.nl</test>
@@ -384,6 +399,7 @@
     <tld name=".pl">
         <whois-service address="whois.dns.pl">
             <pattern type="unavailable" mode="string">nameservers:</pattern>
+            <pattern type="quota-exceeded" mode="string">previous request is being processed for</pattern>
         </whois-service>
         <test expected-result="unavailable">google.pl</test>
         <test expected-result="available">blabla123google.pl</test>
@@ -413,7 +429,9 @@
         <test expected-result="available">blabla123google.se</test>
     </tld>            
     <tld name=".sg">
-        <whois-service address="whois.nic.net.sg" />
+        <whois-service address="whois.nic.net.sg">
+            <pattern type="unavailable" mode="string">this domain name is in the registry reserved list.</pattern>
+        </whois-service>
         <test expected-result="unavailable">google.sg</test>
         <test expected-result="available">blabla123google.sg</test>
     </tld>            
@@ -430,6 +448,8 @@
     <tld name=".sk">
         <whois-service address="whois.sk-nic.sk">
             <pattern type="unavailable" mode="string">domain-status       dom_ok</pattern>
+            <pattern type="unavailable" mode="string">domain-name</pattern>
+            <pattern type="unavailable" mode="string">domain-status       dom_lnot</pattern>
         </whois-service>
         <test expected-result="unavailable">google.sk</test>
         <test expected-result="available">blabla123google.sk</test>
@@ -472,7 +492,9 @@
         <test expected-result="available">blabla123google.tw</test>
     </tld>            
     <tld name=".ua">
-        <whois-service address="whois.ua" />
+        <whois-service address="whois.ua">
+            <pattern type="unavailable" mode="string">domain:</pattern>
+        </whois-service>
         <test expected-result="unavailable">google.ua</test>
         <test expected-result="available">blabla123google.ua</test>
     </tld>            
