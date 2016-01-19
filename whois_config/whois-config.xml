@@ -158,7 +158,7 @@
         <test expected-result="available">blabla123google.co</test>
     </tld>            
     <tld name=".co.nz">
-        <whois-service address="whois.srs.net.nz" />
+        <whois-service address="whois.srs.net.nz">
             <pattern type="quota-exceeded" mode="string">nzrs limited</pattern>
         </whois-service>
         <test expected-result="unavailable">google.co.nz</test>
@@ -306,7 +306,7 @@
         <test expected-result="available">blabla123google.jp</test>
     </tld>            
     <tld name=".kr">
-        <whois-service address="whois.nic.or.kr" />
+        <whois-service address="whois.nic.or.kr">
             <pattern type="unavailable" mode="string">the requested domain name is restricted because of public interest.</pattern>
         </whois-service>
         <test expected-result="unavailable">google.kr</test>
