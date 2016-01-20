@@ -453,7 +453,8 @@
         <whois-service address="whois.arnes.si" />
         <test expected-result="unavailable">google.si</test>
         <test expected-result="available">blabla123google.si</test>
-    </tld>            
+    </tld>           
+<!--     
     <tld name=".sk">
         <whois-service address="whois.sk-nic.sk">
             <pattern type="unavailable" mode="string">domain-status       dom_ok</pattern>
@@ -463,6 +464,7 @@
         <test expected-result="unavailable">google.sk</test>
         <test expected-result="available">blabla123google.sk</test>
     </tld>            
+-->
     <tld name=".st">
         <whois-service address="whois.nic.st" />
         <test expected-result="unavailable">google.st</test>
