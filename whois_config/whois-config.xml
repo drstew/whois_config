@@ -240,6 +240,7 @@
         <test expected-result="unavailable">google.gs</test>
         <test expected-result="available">blabla123google.gs</test>
     </tld>            
+<!--    
     <tld name=".hk">
         <whois-service address="whois.hkirc.hk">
             <pattern type="available" mode="string">the domain has not been registered.</pattern>
@@ -248,6 +249,7 @@
         <test expected-result="unavailable">google.hk</test>
         <test expected-result="available">blabla123google.hk</test>
     </tld>            
+-->    
     <tld name=".hr">
         <whois-service address="registrar.carnet.hr" />
         <test expected-result="unavailable">google.hr</test>
@@ -260,13 +262,15 @@
         <test expected-result="unavailable">google.ie</test>
         <test expected-result="available">blabla123google.ie</test>
     </tld>            
+<!--
     <tld name=".il">
         <whois-service address="whois.isoc.org.il">
             <pattern type="available" mode="string">% no data was found to match the request criteria.</pattern>
         </whois-service>
         <test expected-result="unavailable">nic.co.il</test>
         <test expected-result="available">blabla123google.il</test>
-    </tld>            
+    </tld>
+-->    
     <tld name=".im">
         <whois-service address="whois.nic.im" />
         <test expected-result="unavailable">google.im</test>
@@ -416,7 +420,8 @@
         <whois-service address="whois.rotld.ro" />
         <test expected-result="unavailable">google.ro</test>
         <test expected-result="available">blabla123google.ro</test>
-    </tld>            
+    </tld>
+<!--                    
     <tld name=".ru">
         <whois-service address="whois.ripn.net">
             <pattern type="available" mode="string">no entries found for the selected source(s).</pattern>
@@ -426,6 +431,7 @@
         <test expected-result="unavailable">google.ru</test>
         <test expected-result="available">blabla123google.ru</test>
     </tld>            
+-->    
     <tld name=".se">
         <whois-service address="whois.iis.se" />
         <test expected-result="unavailable">google.se</test>
@@ -462,11 +468,13 @@
         <test expected-result="unavailable">google.st</test>
         <test expected-result="available">blabla123google.st</test>
     </tld>            
+<!--                    
     <tld name=".th">
         <whois-service address="whois.thnic.net" />
         <test expected-result="unavailable">google.th</test>
         <test expected-result="available">blabla123google.th</test>
-    </tld>            
+    </tld>
+-->
     <tld name=".tk">
         <whois-service address="whois.dot.tk" />
         <test expected-result="unavailable">google.tk</test>
