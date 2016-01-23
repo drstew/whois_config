@@ -628,6 +628,7 @@
     <pattern type="quota-exceeded" mode="string">server busy</pattern>
     <pattern type="quota-exceeded" mode="string">ip address blocked</pattern>
     <pattern type="quota-exceeded" mode="string">excessive querying</pattern>
+    <pattern type="quota-exceeded" mode="string">you have reached configured rate limit</pattern>
 
     <pattern type="unavailable" mode="string">registered until cancelled</pattern>
     <pattern type="unavailable" mode="string">not available</pattern>
