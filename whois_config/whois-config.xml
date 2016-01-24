@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <whois-config>
     <!-- EXAMPLES
+        <unavailable>com.co</unavailable>
+        <unavailable>gov.co</unavailable>
+        <unavailable>mil.co</unavailable>
+        <unavailable>org.co</unavailable>
         <tld name=".com">
             <whois-service address="internic.net">
                 <pattern type="quota-exceeded" mode="string">Quota exceeded</pattern>
@@ -21,6 +25,13 @@
         </tld>
     -->    
 
+    <!-- unavailable [BEGIN] -->
+    <unavailable>com.co</unavailable>
+    <unavailable>gov.co</unavailable>
+    <unavailable>mil.co</unavailable>
+    <unavailable>org.co</unavailable>
+    <!-- unavailable [BEGIN] -->
+    
     <!-- gTLD [BEGIN] -->
     <tld name=".com">
         <whois-service address="whois.internic.net" />
