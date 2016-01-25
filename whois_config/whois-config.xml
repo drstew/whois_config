@@ -140,6 +140,7 @@
         <test expected-result="unavailable">google.cd</test>
         <test expected-result="available">blabla123google.cd</test>
     </tld>            
+<!--    
     <tld name=".ch">
         <whois-service address="whois.nic.ch">
             <pattern type="available" mode="string">we do not have an entry in our database matching your query.</pattern>
@@ -148,6 +149,7 @@
         <test expected-result="unavailable">google.ch</test>
         <test expected-result="available">blabla123google.ch</test>
     </tld>            
+-->    
     <tld name=".cl">
         <whois-service address="whois.nic.cl">
             <pattern type="available" mode="string">no existe</pattern>
