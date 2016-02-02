@@ -172,7 +172,6 @@
     </tld>            
     <tld name=".co.nz">
         <whois-service address="whois.srs.net.nz">
-            <pattern type="quota-exceeded" mode="string">nzrs limited</pattern>
         </whois-service>
         <test expected-result="unavailable">google.co.nz</test>
         <test expected-result="available">blabla123google.co.nz</test>
