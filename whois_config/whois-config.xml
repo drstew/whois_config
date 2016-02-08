@@ -124,6 +124,8 @@
     <tld name=".ca">
         <whois-service address="whois.cira.ca">
             <pattern type="unavailable" mode="string">the domain name provided is reserved for the use of a canadian municipality.</pattern>
+            <pattern type="unavailable" mode="string">domain status:         registered</pattern>
+            <pattern type="unavailable" mode="string">domain status:         to be released</pattern>
         </whois-service>
         <test expected-result="unavailable">google.ca</test>
         <test expected-result="available">blabla123google.ca</test>
