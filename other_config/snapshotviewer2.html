@@ -334,6 +334,14 @@ footer {
         <h1>BackLinks</h1> 
         <div id="linksCloud" style="height:300px; width:100%"></div>
         <h1>WayBacks</h1>
+        <ul>
+            <script type="text/javascript">
+                var titles = '$TITLES$'.split(/,/);
+                titles.forEach(function(title) {
+                    document.write('<li>'+title+'</li>');
+                });
+            </script>
+        </ul>        
       </div>
     </div>
   </div>
