@@ -11,7 +11,8 @@
         <link rel="stylesheet" type="text/css" href="http://xupypr.com/xups/dr/css/style.css" />
         <link rel="stylesheet" type="text/css" href="http://xupypr.com/xups/dr/css/elastislide.css" />
         <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
-        
+        <link href="http://mistic100.github.io/jQCloud/dist/jqcloud2/dist/jqcloud.min.css" rel="stylesheet">
+
         <!--[if lt IE 9]>
           <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
@@ -44,7 +45,7 @@
             </div>
          </script>
         <!-- Gallery END -->
-                
+             
         <!-- CSS code from Bootply.com editor -->
         
         <style type="text/css">
@@ -330,7 +331,9 @@ footer {
   <div class="container">
     <div class="row">
       <div class="col-md-12 text-center">
-        <p class="lead">BackLinks and WayBacks</p>
+        <h1>BackLinks</h1> 
+        <div id="linksCloud" style="height:300px; width:100%"></div>
+        <h1>WayBacks</h1>
       </div>
     </div>
   </div>
@@ -378,7 +381,8 @@ footer {
     <script type="text/javascript" src="http://xupypr.com/xups/dr/js/jquery.elastislide.js"></script>
     <script type="text/javascript" src="http://xupypr.com/xups/dr/js/gallery.js"></script>
     <script src="http://www.pbnhq.com/ronin/js/jquery.knob.modified.min.js"></script>
-                
+    <script src="http://mistic100.github.io/jQCloud/dist/jqcloud2/dist/jqcloud.min.js"></script>
+    
         <!-- JavaScript jQuery code from Bootply.com editor  -->
         
         <script type="text/javascript">
@@ -474,6 +478,25 @@ footer {
 	        'tickColorizeValues': true,
 			'skin':'tron'
 	    });        
+
+            var words = '$LINKS$'.split(/,| /).filter(function(n){ return n != undefined });
+            var cloudSource = [];
+            words.forEach(function (word) {
+                var f = false;
+                cloudSource.forEach(function (cloudElement) {
+                    if (word === cloudElement.text) {
+                        cloudElement.weight++;
+                        f = true;
+                    }
+                });
+                if (!f) {
+                    cloudSource.push({text:word, weight:1});
+                }
+            });            
+            $("#linksCloud").jQCloud(cloudSource, {
+                fontSize: {from:0.09, to:0.04},
+                autoResize: true
+            });
         });
         
         </script>  
