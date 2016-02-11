@@ -447,7 +447,10 @@
     </tld>            
 -->    
     <tld name=".se">
-        <whois-service address="whois.iis.se" />
+        <whois-service address="whois.iis.se">
+            <pattern type="unavailable" mode="string">state:            active</pattern>
+            <pattern type="available" mode="string">" not found.</pattern>
+        </whois-service>
         <test expected-result="unavailable">google.se</test>
         <test expected-result="available">blabla123google.se</test>
     </tld>            
