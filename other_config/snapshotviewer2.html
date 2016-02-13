@@ -202,10 +202,6 @@ img.grayscale {
   margin: 10px;
 }
 
-footer {
-  padding: 100px 0;
-}
-
 .rubber-image {
     max-width: 100%;
 }
@@ -373,32 +369,20 @@ footer {
   </div>
 </div>
 
-<div id="sec4" class="featurette">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12 text-center">
-        <p class="lead">Other</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<footer>
-  <div class="container blurb">
+<div id="sec4" class="container blurb">
     <div class="row">
       <div class="col-md-6 col-md-offset-3 text-center">
         <ul class="list-inline">
-          <li><i class="icon-facebook icon-2x"></i></li>
-          <li><i class="icon-twitter icon-2x"></i></li>
-          <li><i class="icon-google-plus icon-2x"></i></li>
-          <li><i class="icon-pinterest icon-2x"></i></li>
+          <li><i class="icon-facebook icon-2x"></i><span id="likes" ></span></li>
+          <li><i class="icon-google-plus icon-2x"></i><span id="plusones" ></span></li>
+          <li><i class="icon-pinterest icon-2x"></i><span id="pins" ></span></li>
+          <li><i class="icon-linkedin-sign icon-2x"></i><span id="lins" ></span></li>
         </ul>
         <hr>
-        <p>Built with <i class="icon-heart-empty"></i> at <a href="http://www.bootply.com">Bootply</a>.<br>Company ©2013</p>
+        <p>Built with <i class="icon-heart-empty"></i> at <a href="http://www.bootply.com">Bootply</a>.<br>PBNHQ ©2016</p>
       </div>
     </div>
-  </div>
-</footer>
+</div>
 
 <ul class="nav pull-right scroll-down">
   <li><a href="#" title="Scroll down"><i class="icon-chevron-down icon-3x"></i></a></li>
@@ -530,6 +514,40 @@ footer {
             $("#linksCloud").jQCloud(cloudSource, {
                 fontSize: {from:0.09, to:0.04},
                 autoResize: true
+            });
+            
+            $.sharedCount = function(url, fn) {
+                url = encodeURIComponent(url || location.href);
+                var domain = "http://free.sharedcount.com/"; /* SET DOMAIN */
+                var apikey = "030104400aace8bdd6cd3970a78b6f845a791d3e" /*API KEY HERE*/
+                var arg = {
+                  data: {
+                    url : url,
+                    apikey : apikey
+                  },
+                    url: domain,
+                    cache: true,
+                    dataType: "json"
+                };
+                if ('withCredentials' in new XMLHttpRequest) {
+                    arg.success = fn;
+                }
+                else {
+                    var cb = "sc_" + url.replace(/\W/g, '');
+                    window[cb] = fn;
+                    arg.jsonpCallback = cb;
+                    arg.dataType += "p";
+                }
+                return jQuery.ajax(arg);
+            };
+            
+            $.sharedCount("http://www.$DOMAINNAME$", function(data){
+//                $("#tweets").text(data.Twitter);   
+                $("#pins").text(data.Pinterest);   
+                $("#lins").text(data.LinkedIn);   
+                $("#likes").text(data.Facebook.like_count);
+                $("#plusones").text(data.GooglePlusOne);
+//                $("#sharedcount").fadeIn();
             });
         });
         
