@@ -227,11 +227,11 @@ img.grayscale {
 </div>
 
 <div id="sec1" class="blurb">
-  <div class="container">
+  <div class="container" style="width:100%">
     <div class="row">
       <div class="col-md-12 text-center">
         <h1> Snapshots </h1>
-        <div class="content">
+        <div class="col-md-7 content">
             <div id="rg-gallery" class="rg-gallery">
                 <div class="rg-thumbs"></div>           
                 <div class="es-carousel-wrapper">
@@ -251,6 +251,52 @@ img.grayscale {
                 </div>
             </div>
         </div>
+        <div class="col-md-2">
+            <div class="row">
+                <div class="circleStatsItem red">
+                    <i class="">TF</i>
+                    <input type="text" value="$TF$" class="orangeCircle" />
+                </div>
+                <strong>Trust Flow</strong>
+            </div>
+            <div class="row">
+                <div class="circleStatsItem blue">
+                    <i class="">DA</i>
+                    <input type="text" value="$DA$" class="blueCircle" />
+                </div>
+                <strong>Domain Authority</strong>
+            </div>
+            <div class="row">
+                <div class="circleStatsItem green">
+                    <i class="">LRD</i>
+                    <input type="text" value="$RD$" class="greenCircle" />
+                </div>
+                <strong>Root Domains</strong>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="row">
+                <div class="circleStatsItem red">
+                    <i class="">CF</i>
+                    <input type="text" value="$CF$" class="orangeCircle" />
+                </div>
+                <strong>Citation Flow</strong>
+            </div>
+            <div class="row">
+                <div class="circleStatsItem blue">
+                    <i class="">PA</i>
+                    <input type="text" value="$PA$" class="blueCircle" />
+                </div>
+                <strong>Page Authority</strong>
+            </div>
+            <div class="row">
+                <div class="circleStatsItem green">
+                    <i class="">BL</i>
+                    <input type="text" value="$EBL$" class="greenCircle" />
+                </div>
+                <strong>Backlinks</strong>
+            </div>
+        </div>        
       </div>
     </div>
   </div>
@@ -262,87 +308,30 @@ img.grayscale {
       <div class="col-md-12 text-center">
           <h1> Metrics </h1>
             <div class="circleStats">
-                    <div class="row">
-                        <!--
-                            <center><img src="http://www.pbnhq.com//ronin/img/majesticseo-sml.png"></img></center>
-                        -->
-                                    <div class="col-sm-6">
-                                            <div class="circleStatsItem red">
-                                                    <i class="">TF</i>
-                                                    <input type="text" value="$TF$" class="orangeCircle" />
-                                            </div>
-                                                    <strong>Trust Flow</strong>
-                                    </div>
-                                    <div class="col-sm-6">	
-                                            <div class="circleStatsItem red">
-                                                            <i class="">CF</i>
-                                                            <input type="text" value="$CF$" class="orangeCircle" />
-                                            </div>
-                                                    <strong>Citation Flow</strong>
-                                    </div>
-                    </div>
-                    <div class="row">
-                        <!--
-                            <center><img src="http://www.pbnhq.com//ronin/img/moz-sml.png"></img></center>
-                        -->
-                                    <div class="col-sm-6">
-                                            <div class="circleStatsItem blue">
-                                                    <i class="">DA</i>
-                                                    <input type="text" value="$DA$" class="blueCircle" />
-                                            </div>
-                                                    <strong>Domain Authority</strong>
-                                    </div>
-                                    <div class="col-sm-6">	
-                                            <div class="circleStatsItem blue">
-                                                    <i class="">PA</i>
-                                                    <input type="text" value="$PA$" class="blueCircle" />
-                                            </div>
-                                                    <strong>Page Authority</strong>
-                                    </div>
-                    </div>
-                    <div class="row">
-                        <!--
-                            <center><img src="http://www.pbnhq.com//ronin/img/majesticseo-sml.png"></img></center>
-                        -->
-                                    <div class="col-sm-6">
-                                            <div class="circleStatsItem green">
-                                                    <i class="">LRD</i>
-                                                    <input type="text" value="$RD$" class="greenCircle" />
-                                            </div>
-                                                    <strong>Root Domains</strong>
-                                    </div>
-                                    <div class="col-sm-6">	
-                                            <div class="circleStatsItem green">
-                                                    <i class="">BL</i>
-                                                    <input type="text" value="$EBL$" class="greenCircle" />
-                                            </div>
-                                                    <strong>Backlinks</strong>
-                                    </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div>
-                                <img alt="Backlink Profile" class="rubber-image" src="https://majestic.com/charts/linkprofile/3/?threshold=&amp;target=http%3A%2F%2F$DOMAINNAME$&amp;datatype=0&amp;IndexDataSource=F&amp;wildcard=1" />
-                            </div>
-                            <strong>Backlink Profile</strong>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div>
+                            <img alt="Backlink Profile" class="rubber-image" src="https://majestic.com/charts/linkprofile/3/?threshold=&amp;target=http%3A%2F%2F$DOMAINNAME$&amp;datatype=0&amp;IndexDataSource=F&amp;wildcard=1" />
                         </div>
+                        <strong>Backlink Profile</strong>
                     </div>
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div>
-                                <img alt="Backlink Profile" class="rubber-image" src="https://majestic.com/charts/backlinks-discovery-chart?d=http%3A%2F%2F$DOMAINNAME$&amp;se=1&amp;w=1000&amp;h=250&amp;t=l&amp;ctype=0&amp;bc=EAEEF0&amp;IndexDataSource=F&amp;wildcard=1" />
-                            </div>
-                            <strong>Backlinks 90 Days</strong>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div>
+                            <img alt="Backlink Profile" class="rubber-image" src="https://majestic.com/charts/backlinks-discovery-chart?d=http%3A%2F%2F$DOMAINNAME$&amp;se=1&amp;w=1000&amp;h=250&amp;t=l&amp;ctype=0&amp;bc=EAEEF0&amp;IndexDataSource=F&amp;wildcard=1" />
                         </div>
+                        <strong>Backlinks 90 Days</strong>
                     </div>
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div>
-                                <img alt="Backlink Profile" class="rubber-image" src="https://majestic.com/charts/referring-domains-discovery-chart?d=http%3A%2F%2F$DOMAINNAME$&amp;se=1&amp;w=1000&amp;h=250&amp;t=rd&amp;ctype=0&amp;bc=EAEEF0&amp;IndexDataSource=F&amp;wildcard=1" />
-                            </div>
-                            <strong>Referring Domains 90 Days</strong>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div>
+                            <img alt="Backlink Profile" class="rubber-image" src="https://majestic.com/charts/referring-domains-discovery-chart?d=http%3A%2F%2F$DOMAINNAME$&amp;se=1&amp;w=1000&amp;h=250&amp;t=rd&amp;ctype=0&amp;bc=EAEEF0&amp;IndexDataSource=F&amp;wildcard=1" />
                         </div>
-                    </div>                
+                        <strong>Referring Domains 90 Days</strong>
+                    </div>
+                </div>                
            </div>
       </div>
     </div>
