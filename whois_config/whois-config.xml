@@ -217,7 +217,9 @@
         <test expected-result="available">blabla123google.de</test>
     </tld>            
     <tld name=".dk">
-        <whois-service address="whois.dk-hostmaster.dk" />
+        <whois-service address="whois.dk-hostmaster.dk">
+            <pattern type="quota-exceeded" mode="string">too many connections.</pattern>
+        </whois-service>
         <test expected-result="unavailable">google.dk</test>
         <test expected-result="available">blabla123google.dk</test>
     </tld>            
