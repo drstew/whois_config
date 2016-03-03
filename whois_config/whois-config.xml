@@ -402,8 +402,9 @@
     <tld name=".nl">
         <whois-service address="whois.domain-registry.nl">
             <pattern type="available" mode="string">is free</pattern>
+            <pattern type="unavailable" mode="string">status:      active</pattern>
             <pattern type="quota-exceeded" mode="string">maximum number of requests per second exceeded</pattern>
-            <pattern type="quota-exceeded" mode="string">server too busy, try again later</pattern>
+            <pattern type="quota-exceeded" mode="string">server too busy</pattern>
         </whois-service>
         <test expected-result="unavailable">google.nl</test>
         <test expected-result="available">blabla123google.nl</test>
